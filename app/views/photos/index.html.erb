@@ -10,12 +10,14 @@
     <table class="table table-striped table-hover">
       <tr>
         <th>Caption</th>
+        <th>Image</th>
         <th>Actions</th>
       </tr>
 
       <% @photos.each do |photo| %>
       <tr>
         <td><%= photo.caption %></td>
+        <td><img src='<%= photo.image %>' class='img-responsive'></td>
         <td>
           <a href="/photos/<%= photo.id %>" class="btn btn-primary">Show</a>
           <a href="/photos/<%= photo.id %>/edit" class="btn btn-warning">Edit</a>
