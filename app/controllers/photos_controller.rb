@@ -14,6 +14,7 @@ class PhotosController < ApplicationController
   def create
     @photo = Photo.new
     @photo.caption = params[:caption]
+    @photo.image = params[:image]
 
     if @photo.save
       redirect_to "/photos", :notice => "Photo created successfully."
@@ -30,6 +31,7 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
     @photo.caption = params[:caption]
+    @photo.image = params[:image]
 
     if @photo.save
       redirect_to "/photos", :notice => "Photo updated successfully."
